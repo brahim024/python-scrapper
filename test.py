@@ -10,9 +10,7 @@ with open('product.cvs','w') as csv_file:
 	csv_writer.writerow(headers)
 	for product in products:
 		title=product.find(class_='itemTitle').get_text().replace('\n','')
-		price=product.find(class_='is block sk-clr1')
-		print('Product',product.text)
-		print('Price:',price.text)
+		price=product.find(class_='is block sk-clr1').get_text().replace('\n','')
 
-		csv_writer.writerow([title,price.text])
+		csv_writer.writerow([title,price])
 	
