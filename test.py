@@ -11,8 +11,8 @@ with open('product.cvs','w') as csv_file:
 	for product in products:
 		title=product.find(class_='itemTitle').get_text().replace('\n','')
 		price=product.find(class_='is block sk-clr1')
-		print('product',product.text)
-		print('price:',price.text)
+		print('Product',product.text)
+		print('Price:',price.text)
 
 		csv_writer.writerow([title,price.text])
 	
